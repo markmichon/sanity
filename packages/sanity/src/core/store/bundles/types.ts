@@ -15,13 +15,17 @@ export interface BundleDocument
   extends Pick<SanityDocument, '_id' | '_createdAt' | '_updatedAt' | '_rev' | '_version'> {
   _type: 'release'
   title: string
+  archived?: boolean
+  releaseType: 'immediately' | 'never' | 'scheduled'
   description?: string
   hue: ColorHueKey
   icon: IconSymbol
   authorId: string
   publishedAt?: string
-  archivedAt?: string
   publishedBy?: string
+
+  archivedAt?: string
+  archivedBy?: string
 }
 
 /**
